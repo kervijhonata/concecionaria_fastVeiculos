@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Automóveis - Compra, Venda e Aluguel de Veículos</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <img src="img/logo.png"/>
+        <nav class="nav">
+            <ul class="menu">
+                <li>
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </li>
+                <li><a href="">Compra</a></li>
+                <li><a href="">Venda</a></li>
+                <li><a href="">Troca</a></li>
+                <li><a href="">Aluguel</a></li>
+                <li><a href="">Contato</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <section class="carrosel">
+            <ul class="innerCarrosel">
+                <li><img src="img/span.jpg"></li>
+                <li><img src="img/span2.jpg"></li>
+                <li><img src="img/span.jpg"></li>
+                <li><img src="img/span2.jpg"></li>
+                <li><img src="img/span.jpg"></li>
+                <li><img src="img/span2.jpg"></li>
+                <img src="img/arrow-prev.png" class="arrow arrow-prev" onclick="show(-1)">
+                <img src="img/arrow-next.png" class="arrow arrow-next" onclick="show(+1)">
+            </ul>
+        </section>
+        <section class="carros">
+            <div class="carro">
+                <img src="img/car2.png" alt="">
+                <h2>Esportivo</h2>
+            </div>
+            <div class="carro">
+                <img src="img/car1.png" alt="">
+                <h2>Nacional</h2>
+            </div>
+            <div class="carro">
+                <img src="img/car3.png" alt="">
+                <h2>SUV</h2>
+            </div>
+            <div class="carro">
+                <img src="img/car4.png" alt="">
+                <h2>Off Road</h2>
+            </div>
+        </section>
+        <section class="marcas">
+            <img src="img/brand1.png" alt="Mercedes">
+            <img src="img/brand2.png" alt="Tesla">
+            <img src="img/brand3.png" alt="Honda">
+            <img src="img/brand4.png" alt="Hyundai">
+            <img src="img/brand5.png" alt="Wolkswagen">
+        </section>
+        <section class="informacao">
+            <h1>Agende Já o Seu Orçamento!</h1>
+            <div>
+                <img src="img/social1.png">
+                <img src="img/social2.png">
+                <img src="img/social3.png">
+            </div>
+            <div>
+                <input type="email" placeholder="Ou Envie-nos seu Email">
+                <button type="submit">></button>
+            </div>
+        </section>
+    </main>
+</body>
+<script type="text/javascript">
+    function toggleMenu(){
+        var menu = document.querySelector(".menu");
+        var hamburger = document.querySelector(".hamburger");
+        var all = document.querySelector("main");
+        menu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+
+        if(all.style.filter == 'blur(10px)'){
+            all.style.filter = 'blur(0px)'
+        }else{
+            all.style.filter = 'blur(10px)'
+        }
+    }
+
+    let liEls = document.querySelectorAll('ul li img');
+    let index = 0;
+    window.show = function(increase) {
+        if(index == liEls.length) index = 0;
+        index = Math.min(Math.max(index,0), liEls.length-1);
+        liEls[index].scrollIntoView({behavior: 'smooth'});
+        console.log(`index: ${index} || qtd liEls: ${liEls.length}`)
+        index = index + increase;
+    }
+
+</script>
+</html>

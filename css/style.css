@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&family=Patua+One&family=Revalia&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    background-color: #E5E5E5;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+header img {
+    height: 40px;
+}
+
+.menu {
+    display: flex; flex-direction: row;
+    list-style: none;
+    font-family: Revalia;
+    font-size: 10pt;
+}
+
+.menu li {
+    margin: 0px 18px;
+}
+
+.menu li a:hover, .menu li a:focus {
+    color: rgb(168, 168, 0);
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburger .bar {
+    width: 26px;
+    height: 3px;
+    background-color: black;
+    margin: 2px;
+}
+
+.carrosel ul { display: flex; margin: 0; padding: 0; overflow: hidden; }
+.carrosel .innerCarrosel li img {
+    width: 100vw;
+}
+.carrosel .arrow-prev {
+    position: absolute;
+    left: 20px;
+    align-self: center;
+    width: 60px;
+}
+.arrow-next {
+    position: absolute;
+    right: 20px;
+    align-self: center;
+    width: 60px;
+}
+.arrow:hover, .arrow:focus {
+    transform: scale(1.1);
+}
+.carros {
+    height: 300px;
+    display: flex;
+}
+.carros .carro {
+    background: yellow;
+    display: flex;
+    flex-direction: column;
+    width:25%;
+    align-items: center;
+    justify-content: center;
+}
+.carros .carro h2 {
+    font-family: Patua One;
+    font-size: 14pt;
+}
+.carros .carro img {
+    height: 14vw;
+}
+.carros .carro img:hover {
+    transform: scale(1.1);
+}
+
+.marcas {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+}
+.marcas img {
+    height: 48px;
+    margin: 40px 30px;
+}
+.informacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px;
+    background-color: #F4F4F4;
+}
+.informacao h1 {
+    font-family: Patua One;
+}
+.informacao img {
+    height: 40px;
+    margin: 0px 12px;
+}
+.informacao input {
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid #C4C4C4;
+}
+.informacao button {
+    background-color: #C4C4C4;
+    border: none;
+    font-family: Passion One;
+    font-size: 16pt;
+}
+
+@media screen and (max-width: 780px){
+    
+    .menu {
+        display: none;
+        z-index: 1;
+    }
+
+    .menu li {
+        margin: 30px;
+        border-bottom: 2px solid #ccc;
+        text-align: center;
+        padding: 6px;
+    }
+
+    .menu li:nth-of-type(1) {
+        border: none;
+    }
+
+    a:hover {
+        transform: scale(2.0);
+    }
+
+    .menu.active{
+        display: flex;
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        width: 60%;
+        height: calc(100%);
+        background-color: #E5E5E5;
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px;
+        align-items: center;
+        font-size: 14pt;
+    }
+
+    .hamburger {
+        display: block;
+    }
+    .hamburger.active .bar { 
+        background: black;
+    }
+    .hamburger.active .bar:nth-of-type(1) {
+        transform: rotate(45deg);
+    }
+    .hamburger.active .bar:nth-of-type(2) {
+        background: transparent;
+    }
+    .hamburger.active .bar:nth-of-type(3) {
+        transform: rotate(-45deg);
+        transform-origin: 0px -3px;
+    }
+
+    .carros {
+        flex-direction: column;
+        width: 100vw;
+        height: auto;
+        background-color: yellow;
+    }
+    .carros .carro {
+        width: 100vw;
+        height: 300px;
+    }
+
+    .carros .carro img {
+        height: 60%;
+    }
+
+    .carros .carro h2 {
+        font-size: 16pt;
+    }
+
+    .marcas img {
+        height: 2rem;
+        margin: 20px 10px;
+    }
+
+    .informacao {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 40px 0;
+        box-sizing: border-box;
+    }
+
+    .informacao h1 {
+        grid-row-start: 1;
+        grid-column: 1 / 3;
+        justify-self: center;
+        font-size: 20pt;
+    }
+
+    .informacao div {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width:360px) {
+    .informacao {
+        padding: 0;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .informacao h1 {
+        font-size: 14pt;
+    }
+}
