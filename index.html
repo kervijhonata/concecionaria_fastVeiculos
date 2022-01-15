@@ -80,35 +80,14 @@
             </div>
             <div>
                 <input type="email" placeholder="Ou Envie-nos seu Email">
-                <button type="submit">></button>
+                <button type="submit" onclick="toggleAlerta()">></button>
             </div>
         </section>
     </main>
+    <div class="alerta">
+        <h1>Logo entraremos em contato com você!</h1>
+        <button onclick="toggleAlerta()">Ok!</button>
+    </div>
 </body>
-<script type="text/javascript">
-    function toggleMenu(){
-        var menu = document.querySelector(".menu");
-        var hamburger = document.querySelector(".hamburger");
-        var all = document.querySelector("main");
-        menu.classList.toggle("active");
-        hamburger.classList.toggle("active");
-
-        if(all.style.filter == 'blur(10px)'){
-            all.style.filter = 'blur(0px)'
-        }else{
-            all.style.filter = 'blur(10px)'
-        }
-    }
-
-    let liEls = document.querySelectorAll('ul li img');
-    let index = 0;
-    window.show = function(increase) {
-        if(index == liEls.length) index = 0;
-        index = Math.min(Math.max(index,0), liEls.length-1);
-        liEls[index].scrollIntoView({behavior: 'smooth'});
-        console.log(`index: ${index} || qtd liEls: ${liEls.length}`)
-        index = index + increase;
-    }
-
-</script>
+<script type="text/javascript" src="js/script.js"></script>
 </html>

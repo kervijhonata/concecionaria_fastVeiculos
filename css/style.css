@@ -132,6 +132,37 @@ header img {
     font-size: 16pt;
 }
 
+.alerta {
+    display: none;
+}
+
+.alerta button {
+    font-size: 20pt;
+    font-family: Passion One;
+    background-color: white;
+    width: 120px;
+}
+
+.alerta h1 {
+    text-align: center;
+}
+
+.alerta.visible {
+    display: flex;
+    font-family: Patua One;
+    background-color: rgb(49, 49, 20);
+    color: white;
+    position: fixed;
+    top: 32vh;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    margin: 10vw;
+    border-radius: 20px;
+}
+
 @media screen and (max-width: 780px){
     
     .menu {
